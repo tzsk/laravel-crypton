@@ -1,7 +1,3 @@
-const Crypton = require('./src/crypton');
-const Encrypter = require('./src/encrypter');
-const VueCrypton = require('./src/vue-crypton');
-
-module.exports.Crypton = Crypton.default;
-module.exports.Encrypter = Encrypter.default;
-module.exports.VueCrypton = VueCrypton.default;
+module.exports.Crypton = require('./src/crypton').default;
+module.exports.Encrypter = require('./src/encrypter').default;
+module.exports.VueCrypton = require('./src/vue-crypton').default;

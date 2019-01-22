@@ -1,4 +1,4 @@
-module.exports = function unserialize(data) {
+let unserialize = function (data) {
     var $global = (typeof window !== 'undefined' ? window : global)
 
     var utf8Overhead = function (str) {
@@ -171,3 +171,5 @@ module.exports = function unserialize(data) {
 
     return _unserialize((data + ''), 0)[2]
 }
+
+export default unserialize;

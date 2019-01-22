@@ -1,4 +1,4 @@
-module.exports = function serialize(mixedValue) {
+let serialize = function (mixedValue) {
     var val, key, okey
     var ktype = ''
     var vals = ''
@@ -96,3 +96,5 @@ module.exports = function serialize(mixedValue) {
 
     return val
 }
+
+export default serialize;

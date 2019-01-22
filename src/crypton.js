@@ -91,7 +91,7 @@ class CryptonHandler extends Applyer {
 
         if (this.apply.indexOf('response') >= 0) {
             this.interceptorInstances.response = axios.interceptors.response.use((response) => {
-                if (response.headers[this.headers.response] !== undefined) {
+                if (response.config.headers[this.headers.response] !== undefined) {
                     response.data = this.encrypter.decrypt(response.data.payload);
                 }
 
