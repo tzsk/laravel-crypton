@@ -2,7 +2,7 @@
   "name": "laravel-crypton",
   "version": "1.0.0",
   "description": "Helper for laravel crypton for request response encryption",
-  "main": "src.js",
+  "main": "index.js",
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
