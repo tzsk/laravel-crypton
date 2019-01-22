@@ -1,0 +1,32 @@
+{
+  "name": "laravel-crypton",
+  "version": "1.0.0",
+  "description": "Helper for laravel crypton for request response encryption",
+  "main": "src.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "keywords": [
+    "laravel",
+    "crypton",
+    "request-encryption",
+    "response-decryption"
+  ],
+  "author": "Kazi Mainuddin Ahmed",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "crypto-js": "^3.1.9-1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "laravel-mix": "^4.0.14",
+    "vue-template-compiler": "^2.5.22"
+  }
+}
