@@ -5,16 +5,11 @@ const VueCrypton = (key) => {
     return {
         install(Vue, options) {
             const settings = options ? options : {};
-            function crypton() {
-                let instance = axios.create(settings);
-                let cryptonite = Crypton(key).encrypt(instance);
+            Vue.prototype.$http = axios.create(settings);
 
-                Vue.prototype.$cryptonite = cryptonite;
-                Vue.prototype.$http = instance;
-            }
-            crypton();
-            
-            Vue.prototype.$crypton = crypton;
+            let instance = axios.create(settings);
+            Vue.prototype.$cryptonite = Crypton(key).encrypt(instance);
+            Vue.prototype.$https = instance;
         }
     }
 }
