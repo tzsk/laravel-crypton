@@ -35,35 +35,37 @@ import { Crypton } from 'laravel-crypton';
 Otherwise just use it as explained below
 
 ```js
-const key = 'Encryption Key in the Laravel End'; // env('APP_KEY')
+var key = 'Encryption Key in the Laravel End'; // env('CRYPTON_KEY')
+
+// Now create 2 different axios instance.
+var Http = axios.create(...);
+
+var Https = axios.create(...);
+Crypton(key).encrypt(Https);
+
 // Encrypt request.
-const cryptonite = Crypton(key).request().encrypt(axios);
+Crypton(key).request().encrypt(axiosInstance);
 
 // Encrypt response.
-const cryptonite = Crypton(key).response().encrypt(axios);
+Crypton(key).response().encrypt(axiosInstance);
 
 // Encrypt both.
-const cryptonite = Crypton(key).both().encrypt(axios);
+Crypton(key).both().encrypt(axiosInstance);
 // Alias -> You don't need to specify the both method.
-const cryptonite = Crypton(key).encrypt(axios);
+Crypton(key).encrypt(axiosInstance);
 
-// Now the api request.
-axios.post('http://example.com/api/something', {movie: 'Avengers: Endgame'}).then((response) => {
+// Encrypted XHR call.
+Https.post('http://example.com/api/something', {movie: 'Avengers: Endgame'}).then((response) => {
+    console.log(response.data);
+});
+
+// Plain XHR call.
+Http.post('http://example.com/api/something', {movie: 'Avengers: Endgame'}).then((response) => {
     console.log(response.data);
 });
 ```
 
 If the `crypton` middleware is applied in the above route then you can see the request or response being encrypted and decrypted in the `Developer Tools -> Network` tab. But if you look at the console you will see that the `response.data` is just a plain javascript object.
-
-**Clear Encryption:**
-
-If at any point in time you have file uploads or anything and you wish to disable the encryption or decryptioin then just call.
-
-```js
-cryptonite.clear();
-```
-
-Then after the action is done executing, you can again enable encryption the same way.
 
 ## Vue JS Plugin
 
@@ -72,7 +74,7 @@ If you are using Vue JS. Then there is already a Plugin Provided with this pakag
 ```js
 import { VueCrypton } from 'laravel-crypton';
 
-const key = 'Encryption Key in the Laravel End'; // env('APP_KEY')
+const key = 'Encryption Key in the Laravel End'; // env('CRYPTON_KEY')
 Vue.use(VueCrypton(key), {
     // Any Axios Options
 });
@@ -81,15 +83,15 @@ Vue.use(VueCrypton(key), {
 Now inside the vue components you can call.
 
 ```js
-this.$http.post('http://example.com/api/something', {movie: 'Avengers: Endgame'}).then((response) => {
+// Encrypted XHR call.
+this.$https.post('http://example.com/api/something', {movie: 'Avengers: Endgame'}).then((response) => {
     console.log(response.data);
 });
 
-// Clear the encryption
-this.$cryptonite.clear();
-
-// Re-start encryption
-this.$crypton();
+// Plain XHR call.
+this.$http.post('http://example.com/api/something', {movie: 'Avengers: Endgame'}).then((response) => {
+    console.log(response.data);
+});
 ```
 
 ## Change log
