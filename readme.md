@@ -67,6 +67,19 @@ Http.post('http://example.com/api/something', {movie: 'Avengers: Endgame'}).then
 
 If the `crypton` middleware is applied in the above route then you can see the request or response being encrypted and decrypted in the `Developer Tools -> Network` tab. But if you look at the console you will see that the `response.data` is just a plain javascript object.
 
+## Standalone
+
+You can also use the encrypter only to encrypt or decrypt. After importing the script tag.
+
+```js
+let crypt = new Encrypter(key); // Key is the crypton key 'base64:...'
+
+// Then you have the basic methods
+crypt.encrypt(param); // Param: any
+
+crypt.decrypt(param); // Param: string
+```
+
 ## Vue JS Plugin
 
 If you are using Vue JS. Then there is already a Plugin Provided with this pakage. Follow the code below to know how to use it.

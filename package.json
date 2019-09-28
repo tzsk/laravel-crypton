@@ -1,6 +1,6 @@
 {
   "name": "laravel-crypton",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper for laravel crypton for request response encryption",
   "main": "index.js",
   "scripts": {

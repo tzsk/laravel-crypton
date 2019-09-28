@@ -10,6 +10,9 @@ export default class Encrypter {
      * @param {string} key 
      */
     constructor(key) {
+        if (key.startsWith('base64:')) {
+            key = key.substr(7);
+        }
         this.key = key;
     }
 
