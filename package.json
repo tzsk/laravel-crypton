@@ -27,6 +27,6 @@
   "devDependencies": {
     "cross-env": "6.0.3",
     "laravel-mix": "5.0.1",
-    "vue-template-compiler": "2.6.10"
+    "vue-template-compiler": "2.6.11"
   }
 }
