@@ -21,7 +21,7 @@
   "author": "Kazi Mainuddin Ahmed",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.28.0",
     "crypto-js": "^4.0.0"
   },
   "devDependencies": {
